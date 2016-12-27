@@ -20,6 +20,7 @@ class CreateTablePortfolios extends Migration
             $table->string('subtitle',200);
             $table->text('text');
             $table->string('image',200);
+            $table->string('order',100);
         });
     }
 

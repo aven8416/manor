@@ -83,6 +83,8 @@
             <!-- Masonry Grid -->
             <div class="masonry-grid row row-space-2">
                 <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+
+
                 <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
                     <!-- Work -->
                     <div class="work work-popup-trigger">
@@ -112,6 +114,8 @@
                 </div>
                 <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
                     <!-- Work -->
+
+
                     <div class="work work-popup-trigger">
                         <div class="work-overlay">
                             <img class="full-width img-responsive" src="{{asset('assets/img/397x400/01.jpg')}}" alt="Portfolio Image">
@@ -189,7 +193,7 @@
                     </div>
                     <!-- End Work -->
                 </div>
-                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
                     <!-- Work -->
                     <div class="work work-popup-trigger">
                         <div class="work-overlay">

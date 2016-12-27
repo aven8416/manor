@@ -32,6 +32,15 @@ class IndexController extends Controller
 
         }
 
+        $photos = array();
+        foreach ($portfolios as $portfolio) {
+            $item = array('title'=>$portfolio->title,'subtitle'=>$portfolio->subtitle,
+                'text'=>$portfolio->text,'image'=>$portfolio->image,'order'=>$portfolio->order );
+            array_push($photos,$item);
+
+        }
+
+
 
 
         return view('site.index', array(
@@ -40,7 +49,8 @@ class IndexController extends Controller
             'reviewers'=> $reviewers,
             'pages'=>$pages,
             'portfolios'=>$portfolios,
-            '$reviews'=>$reviews
+            'reviews'=>$reviews,
+            'photos'=>$photos
         ));
     }
 }
