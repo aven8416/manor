@@ -233,40 +233,28 @@
                 <div class="swiper-slider swiper-testimonials">
                     <!-- Swiper Wrapper -->
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <blockquote class="blockquote">
-                                <div class="margin-b-20">
-                        Очень понравилось.
-                                </div>
-                                <div class="margin-b-20">
-                                Супер красивое место
 
-                                </div>
-                                <p><span class="fweight-700 color-link">Настя </span>, Барановичи </p>
-                            </blockquote>
-                        </div>
+                        @if (isset($reviewers))
+
+                            @foreach($reviewers as $item)
                         <div class="swiper-slide">
                             <blockquote class="blockquote">
                                 <div class="margin-b-20">
-                                        Интересненько
+                            <h3> {{$item['title']}}</h3>
                                 </div>
                                 <div class="margin-b-20">
-                                    Часто сюда приезжаю
+                                  <p>{{$item['text']}}</p>
                                 </div>
-                                <p><span class="fweight-700 color-link">Влад </span>, Барановичи</p>
+                                <p><span class="fweight-700 color-link">{{$item['reviewer']}} </span>, {{$item['address']}} </p>
                             </blockquote>
+
+
                         </div>
-                        <div class="swiper-slide">
-                            <blockquote class="blockquote">
-                                <div class="margin-b-20">
-                                Захватывает дух
-                                </div>
-                                <div class="margin-b-20">
-                                Обязательно приеду еще
-                                </div>
-                                <p><span class="fweight-700 color-link">Павлик </span>, Барановичи</p>
-                            </blockquote>
-                        </div>
+                            @endforeach
+
+                        @endif
+
+
                     </div>
                     <!-- End Swiper Wrapper -->
 
