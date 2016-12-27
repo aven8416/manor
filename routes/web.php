@@ -10,7 +10,9 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::group(['middleware'=>'web'], function() {
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::match(['get','post'],'/',['uses'=>'IndexController@execute','as'=>'home']);
+    Route::get('/page/{alias}',['uses'=>'PageController@execute','as'=>'page']);
+    Route::auth();
 });
