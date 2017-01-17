@@ -32,13 +32,7 @@ class IndexController extends Controller
 
         }
 
-        $photos = array();
-        foreach ($portfolios as $portfolio) {
-            $item = array('title'=>$portfolio->title,'subtitle'=>$portfolio->subtitle,
-                'text'=>$portfolio->text,'image'=>$portfolio->image,'order'=>$portfolio->order );
-            array_push($photos,$item);
-
-        }
+        
 
 
 
@@ -49,8 +43,8 @@ class IndexController extends Controller
             'reviewers'=> $reviewers,
             'pages'=>$pages,
             'portfolios'=>$portfolios,
-            'reviews'=>$reviews,
-            'photos'=>$photos
+            'reviews'=>$reviews
+
         ));
     }
 }

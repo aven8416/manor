@@ -84,26 +84,25 @@
             <div class="masonry-grid row row-space-2">
                 <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
 
-                @if (isset ($photos))
-                    @foreach($photos as $item)
-
-                <div class="masonry-grid-item col-xs-12 col-sm-6 {{ $item['order']}}  margin-b-4">
+                @if (isset ($portfolios) && is_object($portfolios ))
+                    @foreach($portfolios as $k =>$portfolio)
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 {{($k==0) ? 'col-md-8 ' : 'col-md-4'}}   margin-b-4"  >
                     <!-- Work -->
                     <div class="work work-popup-trigger">
                         <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{!!asset('assets/img/' . $item['image']) !!}" alt="Portfolio Image">
+                            <img class="full-width img-responsive" src="{!!asset('assets/img/' . $portfolio->image)  !!}" alt="Portfolio Image">
                         </div>
                         <div class="work-popup-overlay">
                             <div class="work-popup-content">
                                 <a href="javascript:void(0);" class="work-popup-close">Спрятать</a>
                                 <div class="margin-b-30">
-                                    <h3 class="margin-b-5">{!! $item['title'] !!}</h3>
-                                    <span>{!! $item['subtitle'] !!}</span>
+                                    <h3 class="margin-b-5">{!! $portfolio->title !!}</h3>
+                                    <span>{!! $portfolio->subtitle !!}</span>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 ">
                                         <div class="margin-t-10 sm-margin-t-0">
-                                            {!! $item['text'] !!}
+                                            {!! $portfolio->text!!}
                                         </div>
                                     </div>
 
@@ -113,115 +112,10 @@
                     </div>
                     <!-- End Work -->
                 </div>
+
                 @endforeach
                 @endif
-              {{--  <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
-                    <!-- Work -->
 
-
-                    <div class="work work-popup-trigger">
-                        <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{{asset('assets/img/397x400/01.jpg')}}" alt="Portfolio Image">
-                        </div>
-                        <div class="work-popup-overlay">
-                            <div class="work-popup-content">
-                                <a href="javascript:void(0);" class="work-popup-close">Спрятать</a>
-                                <div class="margin-b-30">
-                                    <h3 class="margin-b-5">Заголовок</h3>
-                                    <span>Подзаголовок</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 ">
-                                        <div class="margin-t-10 sm-margin-t-0">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Work -->
-                </div>
-                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                    <!-- Work -->
-                    <div class="work work-popup-trigger">
-                        <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{{asset('assets/img/397x300/01.jpg')}}" alt="Portfolio Image">
-                        </div>
-                        <div class="work-popup-overlay">
-
-                            <div class="work-popup-content">
-                                <a href="javascript:void(0);" class="work-popup-close">Спрятать</a>
-                                <div class="margin-b-30">
-                                    <h3 class="margin-b-5">Заголовок</h3>
-                                    <span>Подзаголовок</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 ">
-                                        <div class="margin-t-10 sm-margin-t-0">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Work -->
-                </div>
-                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                    <!-- Work -->
-                    <div class="work work-popup-trigger">
-                        <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{{asset('assets/img/397x300/02.jpg')}}" alt="Portfolio Image">
-                        </div>
-                        <div class="work-popup-overlay">
-                            <div class="work-popup-content">
-                                <a href="javascript:void(0);" class="work-popup-close">Спрятать</a>
-                                <div class="margin-b-30">
-                                    <h3 class="margin-b-5">Заголовок</h3>
-                                    <span>Подзаголовок</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 ">
-                                        <div class="margin-t-10 sm-margin-t-0">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Work -->
-                </div>
-                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                    <!-- Work -->
-                    <div class="work work-popup-trigger">
-                        <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{{asset('assets/img/397x300/03.jpg')}}" alt="Portfolio Image">
-                        </div>
-                        <div class="work-popup-overlay">
-                            <div class="work-popup-content">
-                                <a href="javascript:void(0);" class="work-popup-close">Спрятать</a>
-                                <div class="margin-b-30">
-                                    <h3 class="margin-b-5">Заголовок</h3>
-                                    <span>Подзаголовок</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 ">
-                                        <div class="margin-t-10 sm-margin-t-0">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Work -->
-                </div>--}}
             </div>
             <!-- End Masonry Grid -->
         </div>
