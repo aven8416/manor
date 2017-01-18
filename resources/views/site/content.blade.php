@@ -1,9 +1,12 @@
 <!--========== SLIDER ==========-->
+@if(isset($stories) && is_object($stories))
+    @foreach($stories as $k=>$story)
+
+        @if ($k==0)
 <div class="promo-block">
     <div class="container">
         <div class="margin-b-40">
-            <h1 class="promo-block-title">Усадьба Бохвицей</h1>
-            <p class="promo-block-text">Беларусь: брестская область,ляховический район,флерьяново</p>
+           {!! $story->text!!}
         </div>
         <a class="js_popup-youtube btn-theme btn-theme-md btn-white-bg text-uppercase" href="https://www.youtube.com/watch?v=cll3dDlJ1JQ" title="видео"><i class="btn-icon icon-control-play"></i> Документальное видео</a>
     </div>
@@ -12,20 +15,22 @@
 
 <!--========== PAGE LAYOUT ==========-->
 <!-- Products -->
+
+        @elseif($k==1)
 <div id="products" >
     <div class="container content-lg">
         <div class="row text-center margin-b-40">
             <div class="col-sm-6 col-sm-offset-3">
-                <h2>История Усадьбы</h2>
-                <p>В 1897 году Павлиново (там где сейчас довольно интересная неоготическая усадьба) и окружающие земли приобретает Ян Бохвиц — сын писателя Флориана Бохвица (в честь которого в последствии и назовут усадьбу). Ян был выдающимся человеком, прошел Крымскую компанию, боролся против крепостного права и в 1863-1864 году участвовал в восстании, за что получил год тюрьмы.</p>
+                {!!  $story->text!!}
             </div>
         </div>
         <!--// end row -->
 
-
         <!--// end row -->
     </div>
 
+
+    @elseif($k==2)
     <div class="container-full-width">
         <div class="row row-space-2">
             <div class="col-sm-6 sm-margin-b-4">
@@ -39,12 +44,11 @@
     </div>
 
 
-
     <div>
         <div class="container content-lg">
             <div class="row text-center margin-b-40">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <p>В 1897 году Павлиново (там где сейчас довольно интересная неоготическая усадьба) и окружающие земли приобретает Ян Бохвиц — сын писателя Флориана Бохвица (в честь которого в последствии и назовут усадьбу). Ян был выдающимся человеком, прошел Крымскую компанию, боролся против крепостного права и в 1863-1864 году участвовал в восстании, за что получил год тюрьмы.</p>
+                    {!! $story->text!!}
                 </div>
             </div>
             <!--// end row -->
@@ -54,35 +58,41 @@
     </div>        <!-- End Products -->
 
 
-
-
-
+    @elseif($k==3)
     <!-- Promo Banner -->
     <div class="promo-banner">
         <div class="container-sm content-lg">
-            <h2 class="promo-banner-title">Место для отдыха</h2>
-            <p class="promo-banner-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+            {!!  $story->text!!}
         </div>
     </div>
     <!-- End Promo Banner -->
 
-
+    @elseif($k==4)
     <div  class = "text-block-3">
         <div class="container content-lg">
             <div class="row text-center margin-b-40">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <p>В 1897 году Павлиново (там где сейчас довольно интересная неоготическая усадьба) и окружающие земли приобретает Ян Бохвиц — сын писателя Флориана Бохвица (в честь которого в последствии и назовут усадьбу). Ян был выдающимся человеком, прошел Крымскую компанию, боролся против крепостного права и в 1863-1864 году участвовал в восстании, за что получил год тюрьмы.</p>
+                    {!! $story->text!!}
                 </div>
             </div>
             <!--// end row -->
         </div>
     </div>
+    @endif
+
+    @endforeach
+    @endif
+
+
+
     <!-- Work -->
     <div id="work">
         <div class="content-md container">
             <!-- Masonry Grid -->
             <div class="masonry-grid row row-space-2">
                 <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+
+
 
                 @if (isset ($portfolios) && is_object($portfolios ))
                     @foreach($portfolios as $k =>$portfolio)
@@ -176,11 +186,13 @@
                 <div class="col-lg-8 wow fadeInLeft delay-06s">
                     <h2 class="feedback-header">Форма обратной связи</h2>
                     <div class="form">
-                        <form>
-                            <input class="input-text" type="text" name="" value="Ваше Имя *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                            <input class="input-text" type="text" name="" value="E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Ваше Сообщение *</textarea>
+                        <form action="{{route('home') }}" method = "post">
+                            <input class="input-text" type="text" name="name" value="Ваше Имя *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                            <input class="input-text" type="email" name="email" value="E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                            <textarea class="input-text text-area" name="text" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Ваше Сообщение *</textarea>
                             <input class="input-btn" type="submit" value="Отправить">
+                            <input class="input-btn" type="hidden"  name="_token" value="{{csrf_token()}}">
+                            {{csrf_field()}}
                         </form>
                     </div>
                 </div>
