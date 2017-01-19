@@ -17,7 +17,7 @@
 <!-- Products -->
 
         @elseif($k==1)
-<div id="products" >
+<div id="history" >
     <div class="container content-lg">
         <div class="row text-center margin-b-40">
             <div class="col-sm-6 col-sm-offset-3">
@@ -86,7 +86,7 @@
 
 
     <!-- Work -->
-    <div id="work">
+    <div id="photo">
         <div class="content-md container">
             <!-- Masonry Grid -->
             <div class="masonry-grid row row-space-2">

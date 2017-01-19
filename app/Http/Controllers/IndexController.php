@@ -8,7 +8,6 @@ use App\Portfolio;
 use App\Review;
 use App\Storie;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Session;
 
 class IndexController extends Controller
 {
