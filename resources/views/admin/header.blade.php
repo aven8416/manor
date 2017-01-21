@@ -13,24 +13,24 @@
 <!-- Container -->
     <div class="container">
         <div class="row text-center ">
-        <div class="col-md-3 table-bordered padding-t-10 ">
-            <a  href="{{route('pages')}}">
+        <div class="col-md-3 table-bordered ">
+            <a class = "btn-link"  href="{{route('pages')}} ">
                     <h5>Страницы</h5>
                 </a>
 
         </div>
             <div class="col-md-3 table-bordered ">
-            <a  href="{{route('portfolio')}}">
-                    <h5>Порфолио</h5>
+            <a class = "btn-link"  href="{{route('portfolio')}}">
+                    <h5>Портфолио</h5>
                 </a>
             </div>
                 <div class="col-md-3 table-bordered">
-            <a href="{{route('story')}}">
+            <a class = "btn-link" href="{{route('story')}}">
                     <h5>История</h5>
                 </a>
                 </div>
                     <div class="col-md-3 table-bordered">
-            <a href="{{route('review')}}">
+            <a class = "btn-link" href="{{route('review')}}">
                     <h5>Отзывы</h5>
                 </a>
                 </div>

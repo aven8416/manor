@@ -59,6 +59,12 @@
             {{ session('status') }}
         </div>
     @endif
+
+    @if (session('break'))
+        <div class="alert alert-danger">
+            {{ session('break') }}
+        </div>
+    @endif
 </header>
 @yield('content')
 </body>

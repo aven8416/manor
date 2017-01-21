@@ -100,7 +100,7 @@
                     <!-- Work -->
                     <div class="work work-popup-trigger">
                         <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{!!asset('assets/img/' . $portfolio->image)  !!}" alt="Portfolio Image">
+                            <img class="full-width img-responsive" src="{!!asset('assets/img/img_portfolio/' . $portfolio->image)!!}" alt="Portfolio Image">
                         </div>
                         <div class="work-popup-overlay">
                             <div class="work-popup-content">
