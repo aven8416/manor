@@ -3,13 +3,17 @@
     @foreach($stories as $k=>$story)
 
         @if ($k==0)
+
+
 <div class="promo-block">
     <div class="container">
         <div class="margin-b-40">
            {!! $story->text!!}
         </div>
-        <a class="js_popup-youtube btn-theme btn-theme-md btn-white-bg text-uppercase" href="https://www.youtube.com/watch?v=cll3dDlJ1JQ" title="видео"><i class="btn-icon icon-control-play"></i> Документальное видео</a>
+
+        <a class="js_popup-youtube btn-theme btn-theme-md btn-white-bg text-uppercase" href="{{$video}}" title="видео"><i class="btn-icon icon-control-play"></i> Документальное видео</a>
     </div>
+
 </div>
 <!--========== SLIDER ==========-->
 
@@ -154,7 +158,7 @@
                             <h3> {{$item['title']}}</h3>
                                 </div>
                                 <div class="margin-b-20">
-                                  <p>{{$item['text']}}</p>
+                                  <p>{!! $item['text'] !!}</p>
                                 </div>
                                 <p><span class="fweight-700 color-link">{{$item['reviewer']}} </span>, {{$item['address']}} </p>
                             </blockquote>

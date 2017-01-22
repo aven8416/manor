@@ -19,21 +19,26 @@
                 </a>
 
         </div>
-            <div class="col-md-3 table-bordered ">
+            <div class="col-md-2 table-bordered ">
             <a class = "btn-link"  href="{{route('portfolio')}}">
                     <h5>Портфолио</h5>
                 </a>
             </div>
-                <div class="col-md-3 table-bordered">
+                <div class="col-md-2 table-bordered">
             <a class = "btn-link" href="{{route('story')}}">
                     <h5>История</h5>
                 </a>
                 </div>
-                    <div class="col-md-3 table-bordered">
+                    <div class="col-md-2 table-bordered">
             <a class = "btn-link" href="{{route('review')}}">
                     <h5>Отзывы</h5>
                 </a>
                 </div>
+            <div class="col-md-3 table-bordered">
+                <a class = "btn-link" href="{{route('video')}}">
+                    <h5>Видео</h5>
+                </a>
+            </div>
 </div>
 
     </div>

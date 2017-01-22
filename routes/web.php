@@ -72,6 +72,17 @@ Route::group(['prefix'=>'admin', 'middleware'=> 'auth'], function() {
             Route::match(['get','post','delete'],'/edit/{story}',['uses'=>'StoryEditController@execute','as'=>'storyEdit']);
 
              });
+    Route:: group(['prefix'=>'links'],function () {
+
+        Route::get('/', ['uses'=>'VideoController@execute', 'as'=>'video']);
+        //admin/stories/add
+        Route::match(['get','post'],'/add',['uses'=>'VideoAddController@execute','as'=>'videoAdd']);
+        //admin/edit/2
+        Route::match(['get','post','delete'],'/edit/{video}',['uses'=>'VideoEditController@execute','as'=>'videoEdit']);
+
+    });
+
+
 });
 
 Auth::routes();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Portfolio;
@@ -52,7 +53,7 @@ class IndexController extends Controller
         $portfolios=Portfolio::get(array('title', 'subtitle', 'text','image'));
         $reviews=Review::get(array('title', 'text', 'reviewer','address'));
         $stories = Storie::all();
-
+        $links = Link::pluck('name');
 
 
         $menu = array();
@@ -61,6 +62,13 @@ class IndexController extends Controller
             array_push($menu,$item);
 
         }
+
+
+        foreach ($links as $k=>$link) {
+
+            $video =$link;
+        }
+
 
 
         $reviewers = array();
@@ -83,7 +91,10 @@ class IndexController extends Controller
             'pages'=>$pages,
             'portfolios'=>$portfolios,
             'reviews'=>$reviews,
-            'stories'=>$stories
+            'stories'=>$stories,
+            'video'=>$video
+
+
 
         ));
     }
